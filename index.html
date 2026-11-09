@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#25160f">
-<title>A Letter for You</title>
+<title>A Birthday Letter for You</title>
 <script>document.documentElement.classList.add('js');</script>
 <style>
 :root{color-scheme:dark;--ink:#4b3729;--paper:#e9d9b8;--faint:#c8b08d;--mono:'Courier New',monospace}
@@ -52,37 +52,59 @@ button{border:0;background:none;color:inherit;cursor:pointer;font:inherit}
 @media(max-width:600px){.scene{padding:24px 14px 36px}.topline{font-size:9px;margin-bottom:19px}.heading{font-size:10px;margin-bottom:18px}.heading::before,.heading::after{width:20px;margin:0 10px}.letter{padding:38px 26px 39px}.letter-head{margin-bottom:30px;font-size:9px}.letter-body{font-size:16px;line-height:1.7}.letter-body p{margin-bottom:13px}.letter-body .salutation{font-size:22px;margin-bottom:20px}.letter-body .closing{margin-top:18px;margin-bottom:0}.paper-footer{margin-top:28px}.below{padding-top:23px}}
 @media(max-width:340px){.letter{padding-left:20px;padding-right:20px}.letter-body{font-size:16px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+
+/* Birthday details: understated confetti and a tiny celebratory flourish. */
+.heading { position:relative; }
+.heading::before,.heading::after { background:#c49a69; }
+.letter-head .seal { font-size:20px; color:#a77b4f; text-shadow:0 1px 0 rgba(255,255,255,.35); }
+.letter { overflow:hidden; }
+.letter::before { pointer-events:none; }
+.birthday-flourish {
+  position:absolute; top:14px; right:18px; z-index:1;
+  color:rgba(139,96,55,.45); font:13px/1 var(--mono); letter-spacing:7px;
+  transform:rotate(8deg); pointer-events:none;
+}
+.birthday-bottom {
+  position:absolute; left:18px; bottom:14px; z-index:1;
+  color:rgba(139,96,55,.42); font:12px/1 Georgia,serif;
+  letter-spacing:5px; pointer-events:none;
+}
+
 </style>
 </head>
 <body>
 <main class="scene" id="scene">
-  <div class="topline" aria-hidden="true"><span>Private correspondence</span><span class="right">No. 001</span></div>
-  <h1 class="heading">A LETTER FOR YOU</h1>
-  <article class="letter" id="letter" aria-label="A letter for you">
-    <div class="letter-head" aria-hidden="true"><span>A note from a stranger</span><span class="seal">◆</span></div>
+  <div class="topline" aria-hidden="true"><span>Birthday correspondence</span><span class="right">A little wish ✦</span></div>
+  <h1 class="heading">A BIRTHDAY LETTER FOR YOU</h1>
+  <article class="letter" id="letter" aria-label="A birthday letter for you">
+    <span class="birthday-flourish" aria-hidden="true">✦ · ✧ · ✦</span>
+    <span class="birthday-bottom" aria-hidden="true">✧  ✦  ✧</span>
+    <div class="letter-head" aria-hidden="true"><span>A little birthday wish</span><span class="seal">✦</span></div>
     <div class="letter-body">
-      <p class="salutation">To Tarini,</p>
-      <p>Hey, Before you continue, promise me <span class="secret">you'll read till the end</span>.</p>
-      <p>Don't worry, <span class="secret">I'm not selling anything.</span></p>
-      <p>Just borrowing <span class="secret">five minute of your day</span>.</p>
-      <p><span class="secret">You see, somewhere in this world, a stranger decided you deserved a little smile today.</span></p>
-      <p><span class="secret">I don't know you much, your story, or what kind of day you're having</span></p>
-      <p><span class="secret">But I hope you've laughed today.</span></p>
-      <p>I hope your favourite <span class="secret">song played at the right moment.</span></p>
-      <p>And if things haven't been going well, <span class="secret"><span style="white-space:nowrap">I hope</span> tomorrow treats you a little more gently.</span></p>
-      <p>That's the whole mystery.</p>
-      <p><span class="secret">No hidden confession. No expectations.</span></p>
-      <p>Just a stranger <span class="secret">reminding another stranger that the world can still be kind.</span></p>
-      <p class="closing"><span class="secret">Have a beautiful day...</span></p>
+      <p class="salutation">To Sneha,</p>
+      <p>Hey, <span class="secret">birthday gurl!</span></p>
+      <p>Some days deserve to be celebrated, and <span class="secret">some people deserve to be reminded of how beautiful their existence is.</span></p>
+      <p>Today happens to be both.</p>
+      <p>I wish I could wrap <span class="secret">all the happiness</span> in this world <span class="secret">and place it gently in your hands.</span></p>
+      <p>Because you deserve <span class="secret">mornings that feel lighter</span>, evenings that <span class="secret">bring peace, and nights filled with beautiful dreams.</span></p>
+      <p>May life never run short of reasons to make you smile.</p>
+      <p>May you find <span class="secret">magic in the little things</span>, warmth in unexpected places, and comfort in the moments you need it most.</p>
+      <p>I hope you never become so busy growing up <span class="secret">that you forget to enjoy the little girl inside you.</span></p>
+      <p>And when the world feels a little too heavy, <span class="secret">may you always find a reason to believe that beautiful things are still waiting ahead.</span></p>
+      <p>If I could wish one thing for you, <span class="secret">it would be that you see yourself through the eyes of all those who are lucky enough to know you.</span></p>
+      <p>So here's to another chapter, <span class="secret">another thousand sunsets</span>, <span class="secret">countless little adventures</span>, and memories yet to be made.</p>
+      <p><strong>And above everything else...</strong></p>
+      <p class="closing"><span class="secret">May life be as gentle with your heart as you are with the world.</span></p>
+      <p class="closing"><span class="secret"><strong>Happy Birthday!</strong></span></p>
     </div>
-    <div class="paper-footer" aria-hidden="true">A little note, just because</div>
+    <div class="paper-footer" aria-hidden="true">Made of wishes & warm thoughts</div>
     <div class="strip-layer" id="stripLayer" aria-hidden="true"></div>
   </article>
   <div class="below">
-    <p class="instruction" id="instruction">Tap anywhere to uncover the next line...</p>
-    <p class="final" id="final" hidden>You've reached the end. Now go make someone's day a little brighter.</p>
+    <p class="instruction" id="instruction">Make a wish, then tap to reveal each little surprise...</p>
+    <p class="final" id="final" hidden>You've reached the end. May this year bring you a thousand little reasons to smile. ✦</p>
     <div class="meta">
-      <span id="progress" aria-live="polite">0 / 11 revealed</span><span class="dot" aria-hidden="true"></span>
+      <span id="progress" aria-live="polite">0 / 14 revealed</span><span class="dot" aria-hidden="true"></span>
       <button class="icon-button" id="sound" type="button" aria-label="Mute paper sound" title="Mute paper sound"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path class="sound-waves" d="M16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/><path class="sound-off" d="M16 9l5 6m0-6-5 6" hidden/></svg></button>
       <button class="icon-button" id="restart" type="button" aria-label="Restart letter" title="Restart letter" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11a8 8 0 1 1 2.3 6.1"/><path d="M4 5v6h6"/></svg></button>
     </div>
